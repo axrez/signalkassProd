@@ -22,7 +22,7 @@
   "scripts": {
     "dev": "node index",
     "build": "next build",
-    "start": "next start"
+    "start": "node index.js -p $PORT"
   },
   "keywords": [],
   "author": "",
