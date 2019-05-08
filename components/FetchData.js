@@ -3,6 +3,8 @@ import axios from 'axios';
 
 import Graph from './Graph';
 import DataTabel from './DataTabel';
+import DFT from './DFT';
+import extractData from '../utils/extractData';
 
 import { GraphWrapper, ContentWrapper, TabelWrapper } from './styled';
 
@@ -25,7 +27,7 @@ const FetchData = () => {
     // Fetch the default view for the graph
     const fetchGraph = async () => {
       const { data } = await axios.get(GraphURI);
-      setGraph(data);
+      setGraph(extractData(data));
     };
 
     fetchnMap().catch(err => console.log(err));
@@ -37,7 +39,7 @@ const FetchData = () => {
     const dateNow = e.target.id;
     const { data } = await axios.post(SpeceficURI, { created: dateNow });
     const newGraph = data;
-    setGraph(newGraph);
+    setGraph(extractData(newGraph));
   };
 
   return (
@@ -49,7 +51,7 @@ const FetchData = () => {
         <Graph data={graph} />
       </GraphWrapper>
       <GraphWrapper>
-        <Graph data={graph} />
+        <DFT data={graph} />
       </GraphWrapper>
     </ContentWrapper>
   );
