@@ -15,8 +15,8 @@ const Graph = ({ data, transform }) => (
   <ResponsiveContainer width="100%" height="100%">
     <LineChart data={data} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
       <CartesianGrid strokeDasharray="1500 1500" />
-      <XAxis tick={transform} />
-      {transform ? <YAxis /> : <YAxis />}
+      <XAxis tick={transform} dataKey="name" unit="kHz" />
+      <YAxis />
       <Tooltip />
       <Line type="monotone" dataKey="uv" stroke="#23382b" dot={false} />
     </LineChart>

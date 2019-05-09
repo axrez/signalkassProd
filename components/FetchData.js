@@ -48,7 +48,7 @@ const FetchData = () => {
         <DataTabel data={date} click={fetchNew} />
       </TabelWrapper>
       <GraphWrapper>
-        <Graph data={graph} />
+        <Graph data={graph} transform={false} />
       </GraphWrapper>
       <GraphWrapper>
         <DFT data={graph} />
