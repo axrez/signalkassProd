@@ -50,8 +50,7 @@ const FetchData = () => {
       <GraphWrapper>
         <Graph
           data={graph
-            .filter((d, i) => i < 100)
-            .map((d, i) => ({ name: i, uv: d - 2000 }))}
+            .filter((d, i) => i < 100) }
           transform={false}
         />
       </GraphWrapper>

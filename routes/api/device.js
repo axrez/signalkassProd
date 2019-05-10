@@ -10,7 +10,7 @@ const MeasureMap = require('../../models/MeasurementMap');
 // @access: Should be private but public for know
 router.post('/post', (req, res) => {
   const array = req.body.data.split(',').map(Number);
-  const correctArray = array.map(d => d - 2000);
+  const correctArray = array.map(d => d - 2300);
   const date = Date.now();
 
   const newMeasure = new Measure({
