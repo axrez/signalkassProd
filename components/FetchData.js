@@ -32,7 +32,7 @@ const FetchData = () => {
 
     fetchnMap().catch(err => console.log(err));
     fetchGraph().catch(err => console.log(err));
-  }, [graph]);
+  }, []);
 
   const fetchNew = async e => {
     // Fetch a new dataset for the graph when the user selects it.
@@ -48,11 +48,7 @@ const FetchData = () => {
         <DataTabel data={date} click={fetchNew} />
       </TabelWrapper>
       <GraphWrapper>
-        <Graph
-          data={graph
-            .filter((d, i) => i < 100) }
-          transform={false}
-        />
+        <Graph data={graph.filter((d, i) => i < 100)} transform={false} />
       </GraphWrapper>
       <GraphWrapper>
         <FFT data={graph} />
